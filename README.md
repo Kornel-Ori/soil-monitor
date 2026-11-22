@@ -1,7 +1,7 @@
-# 
+### Visit: 
 [www.soilmonitor.ie]
 
-## Raspberry Pi Soil Moisture Monitoring System
+### Raspberry Pi Soil Moisture Monitoring System
 
 A Raspberry Pi-based project that monitors soil moisture in plants using soil moisture sensors and LED indicators. The system helps users identify when plants need watering by providing a simple visual indication of soil conditions.
 
