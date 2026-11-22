@@ -3,9 +3,10 @@ from pathlib import Path
 from sqlalchemy import create_engine
 from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
-# fastapi/data/readings.db
-PROJECT_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = PROJECT_DIR / "data"
+# fastapi/database/readings.db
+PROJECT_DIR = Path(__file__).resolve().parent
+
+DATA_DIR = PROJECT_DIR / "database"
 DATA_DIR.mkdir(exist_ok=True)
 
 DATABASE_PATH = DATA_DIR / "readings.db"
