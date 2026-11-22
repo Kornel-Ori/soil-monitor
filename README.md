@@ -5,13 +5,13 @@
 
 A Raspberry Pi-based project that monitors soil moisture in plants using soil moisture sensors and LED indicators. The system helps users identify when plants need watering by providing a simple visual indication of soil conditions.
 
-## Project Overview
+### Project Overview
 
 The goal of this project is to build a soil moisture monitoring system capable of collecting readings from multiple sensors and displaying the results through LED indicators.
 
 Each sensor monitors the moisture level of the soil in a plant pot. The Raspberry Pi processes the readings and activates the appropriate LED indicator based on the measured moisture level.
 
-## Objectives
+### Objectives
 
 - Monitor soil moisture levels to help maintain healthy plants.
 - Collect, process and store real-time moisture readings using a Raspberry Pi.
@@ -20,7 +20,7 @@ Each sensor monitors the moisture level of the soil in a plant pot. The Raspberr
 - Develop a web dashboard using FastAPI to display moisture levels and historical data.
 - Deploy and host the application on an AWS server using Docker.
 
-## How It Works
+### How It Works
 
 1. Soil moisture sensor measures the moisture level of a plant.
 2. The Raspberry Pi reads the sensor values.
@@ -28,7 +28,7 @@ Each sensor monitors the moisture level of the soil in a plant pot. The Raspberr
 4. The corresponding LED indicates the current moisture status.
 5. The process repeats continuously, allowing the system to monitor multiple plants.
    
-## Hardware Requirements
+### Hardware Requirements
 
 - Raspberry Pi 5
 - Soil Moisture Sensor Kit
@@ -39,7 +39,7 @@ Each sensor monitors the moisture level of the soil in a plant pot. The Raspberr
 - Breadboard and jumper wires
 - Plant pots and soil for testing
 
-## Deployment & Hosting
+### Deployment & Hosting
 
 The Soil Monitor application is deployed on an AWS EC2 Ubuntu server and accessed through the domain soilmonitor.ie.
 
@@ -52,7 +52,7 @@ The deployment uses the following technologies:
 - Apache: Acts as a reverse proxy, forwarding incoming web requests to the FastAPI application.
 - SQLite: Stores plant information and historical sensor readings.
 
-## Project Structure
+### Project Structure
 
 A possible project structure is:
 
@@ -73,7 +73,7 @@ raspberry-pi-soil-monitor/
 
 The structure may change as the project develops.
 
-## Getting Started
+### Getting Started
 
 ### 1. Clone the repository
 
