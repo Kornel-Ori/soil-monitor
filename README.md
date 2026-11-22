@@ -3,22 +3,22 @@
 
 ## Raspberry Pi Soil Moisture Monitoring System
 
-A Raspberry Pi-based project that monitors soil moisture in multiple plants or growing areas using soil moisture sensors and LED indicators. The system helps users identify when plants need watering by providing a simple visual indication of soil conditions.
+A Raspberry Pi-based project that monitors soil moisture in plants using soil moisture sensors and LED indicators. The system helps users identify when plants need watering by providing a simple visual indication of soil conditions.
 
 ## Project Overview
 
 The goal of this project is to build a soil moisture monitoring system capable of collecting readings from multiple sensors and displaying the results through LED indicators.
 
-Each sensor monitors the moisture level of the soil in a plant pot or growing area. The Raspberry Pi processes the readings and activates the appropriate LED indicator based on the measured moisture level.
+Each sensor monitors the moisture level of the soil in a plant pot. The Raspberry Pi processes the readings and activates the appropriate LED indicator based on the measured moisture level.
 
 ## Objectives
 
-- Monitor soil moisture in multiple plants or growing areas.
-- Read and process moisture sensor data using a Raspberry Pi.
-- Use LED indicators to communicate soil moisture conditions.
-- Identify plants that may need watering.
+- Monitor soil moisture levels to help maintain healthy plants.
+- Collect, process and store real-time moisture readings using a Raspberry Pi.
 - Develop a modular system that can be expanded with additional sensors.
 - Practise Python programming, GPIO control and hardware integration.
+- Develop a web dashboard using FastAPI to display moisture levels and historical data.
+- Deploy and host the application on an AWS server using Docker.
 
 ## Hardware Requirements
 
@@ -27,7 +27,7 @@ Each sensor monitors the moisture level of the soil in a plant pot or growing ar
   - Moisture Sensor Spade
   - Moisture Sensor Comparator Board (based on LM393)
   - LED Indicators 
-- ADS1115 16-bit ADC module (16 bit, 4 channel analog to digital)
+- ADS1115 16-bit ADC module (16 bit, 4 channel analog to digital converter)
 - Breadboard and jumper wires
 - Plant pots and soil for testing
 
