@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Login | Soil Monitor{% endblock title %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', path='/css/login.css') }}">
+{% endblock extra_css %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-box">
+        <h2>Soil Monitor</h2>
+        <p>Please sign in to continue.</p>
+
+
+        <form>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="guest-section">
+            <span>or</span>
+            <a href="/" class="guest-button">Continue as Guest</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
