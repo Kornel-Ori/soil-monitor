@@ -20,6 +20,14 @@ Each sensor monitors the moisture level of the soil in a plant pot. The Raspberr
 - Develop a web dashboard using FastAPI to display moisture levels and historical data.
 - Deploy and host the application on an AWS server using Docker.
 
+## How It Works
+
+1. Soil moisture sensor measures the moisture level of a plant.
+2. The Raspberry Pi reads the sensor values.
+3. The software compares each reading against configurable moisture thresholds.
+4. The corresponding LED indicates the current moisture status.
+5. The process repeats continuously, allowing the system to monitor multiple plants.
+   
 ## Hardware Requirements
 
 - Raspberry Pi 5
@@ -31,32 +39,18 @@ Each sensor monitors the moisture level of the soil in a plant pot. The Raspberr
 - Breadboard and jumper wires
 - Plant pots and soil for testing
 
-## How It Works
+## Deployment & Hosting
 
-1. Each soil moisture sensor measures the moisture level of a different plant or growing area.
-2. The Raspberry Pi reads the sensor values.
-3. The software compares each reading against configurable moisture thresholds.
-4. The corresponding LED indicates the current moisture status.
-5. The process repeats continuously, allowing the system to monitor multiple plants.
+The Soil Monitor application is deployed on an AWS EC2 Ubuntu server and accessed through the domain soilmonitor.ie.
 
-### LED Indicator Logic
+The deployment uses the following technologies:
 
-The following status scheme is a proposed starting point and can be adjusted during testing.
-
-| LED indicator | Soil condition | Suggested action |
-|---|---|---|
-| Red | Dry soil | Water the plant |
-| Yellow | Moisture is getting low | Check the soil |
-| Green | Sufficient moisture | No watering needed |
-
-The exact sensor thresholds will depend on the sensor type, soil composition and calibration results.
-
-## Software Requirements
-
-- Python 3
-- Raspberry Pi OS
-- GPIO control library, such as `gpiozero`
-- SPI interface and an appropriate library for the MCP3008, if required
+- AWS EC2: Hosts the application on a cloud-based Ubuntu server.
+- Docker: Containerises the FastAPI application to provide a consistent deployment environment.
+- Docker Compose: Manages the application container.
+- Uvicorn: Runs the FastAPI application inside Docker.
+- Apache: Acts as a reverse proxy, forwarding incoming web requests to the FastAPI application.
+- SQLite: Stores plant information and historical sensor readings.
 
 ## Project Structure
 
