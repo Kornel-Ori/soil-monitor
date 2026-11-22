@@ -31,6 +31,7 @@
 
 <body class="d-flex flex-column min-vh-100">
 
+    <!-- {% if not hide_navigation %} -->
     <!-- Floating navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark main-navbar">
         <div class="container-fluid px-4 px-lg-5">
@@ -67,6 +68,7 @@
             </div>
         </div>
     </nav>
+    <!-- {% endif %} -->
 
     <!-- Main content -->
     <main class="main-content flex-grow-1">
@@ -74,6 +76,7 @@
         {% endblock content %}
     </main>
 
+    <!-- {% if not hide_navigation %} -->
     <!-- Footer -->
     <footer class="bg-dark text-light py-3">
         <div class="container text-center">
@@ -90,6 +93,7 @@
             </p>
         </div>
     </footer>
+    <!-- {% endif %} -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -97,7 +101,7 @@
     
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<<script>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('moistureChart');
 
