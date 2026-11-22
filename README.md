@@ -1,4 +1,4 @@
-#Visit: <href>soilmonitor.ie</href>
+# Visit: [www.soilmonitor.ie]
 
 ## Raspberry Pi Soil Moisture Monitoring System
 
