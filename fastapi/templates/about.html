@@ -1,0 +1,52 @@
+ 
+{% extends "layout.html" %}
+
+{% block title %}About | Soil Monitor{% endblock title %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="mb-4">About Soil Monitor</h1>
+
+            <p>
+                Soil Monitor is an Internet of Things (IoT) project developed
+                to monitor soil moisture levels using connected sensors and
+                a Raspberry Pi.
+            </p>
+
+            <p>
+                The system collects soil moisture readings and sends the data
+                to a FastAPI application, where readings are stored in a
+                database and displayed on a dashboard.
+            </p>
+
+            <h3 class="mt-4">Project Purpose</h3>
+            <p>
+                The aim is to help users monitor soil conditions, understand
+                moisture changes over time and make better decisions about
+                when plants need watering.
+            </p>
+
+            <h3 class="mt-4">Internet of Things (IoT)</h3>
+            <p>
+                This project demonstrates how physical sensors, hardware,
+                software and databases can work together. The Raspberry Pi
+                collects data from the soil moisture sensor through an
+                ADS1115 analogue-to-digital converter and communicates with
+                the application.
+            </p>
+
+            <h3 class="mt-4">Technologies Used</h3>
+            <ul>
+                <li>Raspberry Pi 5</li>
+                <li>Soil moisture sensor and ADS1115 ADC</li>
+                <li>Python</li>
+                <li>FastAPI</li>
+                <li>SQLite and SQLAlchemy</li>
+                <li>HTML, CSS and Bootstrap</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock content %}
