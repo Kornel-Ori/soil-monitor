@@ -9,7 +9,12 @@ import models
 from database import Base, engine, get_db
 from auth import hash_password
 #from mqtt_listener import start_mqtt_listener, stop_mqtt_listener
-from schemas import NodeCreate, NodeResponse, PlantCreate, PlantResponse, PlantSpeciesResponse, PlantUpdate, ReadingCreate, ReadingResponse, ReadingUpdate, UserResponse, UserCreate, UserUpdate
+from schemas import (
+    NodeCreate, NodeResponse,
+    PlantCreate, PlantResponse, PlantUpdate,
+    ReadingCreate, ReadingResponse, ReadingUpdate,
+    UserResponse, UserCreate, UserUpdate
+)
 
 Base.metadata.create_all(bind=engine)
 
@@ -60,20 +65,6 @@ def update_existing_user(user_id: int, user: UserUpdate, db: Session = Depends(g
     db.commit()
     db.refresh(result)
     return result   
-
-
-#--------PlantsSpecies
-@app.get("/plants_species/", response_model=list[PlantSpeciesResponse])
-def get_all_plants_species(db: Session = Depends(get_db)):
-    result = db.execute(select(models.PlantSpecies))
-    return result.scalars().all()
-
-@app.get("/plants_species/{species_id}", response_model=PlantSpeciesResponse)
-def get_plant_species(species_id: int, db: Session = Depends(get_db)):
-    result = db.get(models.PlantSpecies, species_id)
-    if result is None:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Plant species not found")
-    return result
 
 
 #--------Plants
@@ -133,7 +124,7 @@ def get_node(node_id: int, db: Session = Depends(get_db)):
     return result
 
 
-@app.patch("/nodes/", response_model=NodeResponse, status_code=status.HTTP_201_CREATED)
+@app.post("/nodes/", response_model=NodeResponse, status_code=status.HTTP_201_CREATED)
 def create_new_node(node: NodeCreate, db: Session = Depends(get_db)):
     result = models.Node(**node.model_dump())
     db.add(result)
@@ -168,6 +159,28 @@ def delete_existing_node(node_id: int, db: Session = Depends(get_db)):
 def get_all_readings(db: Session = Depends(get_db)):
     result = db.execute(select(models.Reading))
     return result.scalars().all()
+
+
+@app.get("/plants/{plant_id}/readings", response_model=list[ReadingResponse])
+def get_plant_readings(plant_id: int, db: Session = Depends(get_db)):
+
+    plant = db.get(models.Plant, plant_id)
+
+    if plant is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Plant not found"
+        )
+
+    result = db.execute(
+        select(models.Reading)
+        .join(models.Node)
+        .where(models.Node.plant_id == plant_id)
+        .order_by(models.Reading.recorded_at.desc())
+    )
+
+    return result.scalars().all()
+
 
 @app.get("/readings/{reading_id}", response_model=ReadingResponse)
 def get_reading(reading_id: int, db: Session = Depends(get_db)):
