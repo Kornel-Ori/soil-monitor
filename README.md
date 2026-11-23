@@ -1,63 +1,58 @@
-# Raspberry Pi Soil Moisture Monitoring System
+### Visit: 
+[www.soilmonitor.ie]
 
-A Raspberry Pi-based project that monitors soil moisture in multiple plants or growing areas using soil moisture sensors and LED indicators. The system helps users identify when plants need watering by providing a simple visual indication of soil conditions.
+### Raspberry Pi Soil Moisture Monitoring System
 
-## Project Overview
+A Raspberry Pi-based project that monitors soil moisture in plants using soil moisture sensors and LED indicators. The system helps users identify when plants need watering by providing a simple visual indication of soil conditions.
+
+### Project Overview
 
 The goal of this project is to build a soil moisture monitoring system capable of collecting readings from multiple sensors and displaying the results through LED indicators.
 
-Each sensor monitors the moisture level of the soil in a plant pot or growing area. The Raspberry Pi processes the readings and activates the appropriate LED indicator based on the measured moisture level.
+Each sensor monitors the moisture level of the soil in a plant pot. The Raspberry Pi processes the readings and activates the appropriate LED indicator based on the measured moisture level.
 
-## Objectives
+### Objectives
 
-- Monitor soil moisture in multiple plants or growing areas.
-- Read and process moisture sensor data using a Raspberry Pi.
-- Use LED indicators to communicate soil moisture conditions.
-- Identify plants that may need watering.
+- Monitor soil moisture levels to help maintain healthy plants.
+- Collect, process and store real-time moisture readings using a Raspberry Pi.
 - Develop a modular system that can be expanded with additional sensors.
 - Practise Python programming, GPIO control and hardware integration.
+- Develop a web dashboard using FastAPI to display moisture levels and historical data.
+- Deploy and host the application on an AWS server using Docker.
 
-## Hardware Requirements
+### How It Works
 
-- Raspberry Pi
-- Multiple soil moisture sensors (preferably capacitive sensors)
-- MCP3008 analogue-to-digital converter (ADC), if using analogue sensors
-- LEDs for moisture status indication
-- Current-limiting resistors for the LEDs
-- Breadboard and jumper wires
-- Power supply for the Raspberry Pi
-- Plant pots and soil for testing
-
-**Note:** The Raspberry Pi does not have built-in analogue inputs. If the selected soil moisture sensors provide analogue output, an ADC such as the MCP3008 is required to read their values.
-
-## How It Works
-
-1. Each soil moisture sensor measures the moisture level of a different plant or growing area.
+1. Soil moisture sensor measures the moisture level of a plant.
 2. The Raspberry Pi reads the sensor values.
 3. The software compares each reading against configurable moisture thresholds.
 4. The corresponding LED indicates the current moisture status.
 5. The process repeats continuously, allowing the system to monitor multiple plants.
+   
+### Hardware Requirements
 
-### LED Indicator Logic
+- Raspberry Pi 5
+- Soil Moisture Sensor Kit
+  - Moisture Sensor Spade
+  - Moisture Sensor Comparator Board (based on LM393)
+  - LED Indicators 
+- ADS1115 16-bit ADC module (16 bit, 4 channel analog to digital converter)
+- Breadboard and jumper wires
+- Plant pots and soil for testing
 
-The following status scheme is a proposed starting point and can be adjusted during testing.
+### Deployment & Hosting
 
-| LED indicator | Soil condition | Suggested action |
-|---|---|---|
-| Red | Dry soil | Water the plant |
-| Yellow | Moisture is getting low | Check the soil |
-| Green | Sufficient moisture | No watering needed |
+The Soil Monitor application is deployed on an AWS EC2 Ubuntu server and accessed through the domain soilmonitor.ie.
 
-The exact sensor thresholds will depend on the sensor type, soil composition and calibration results.
+The deployment uses the following technologies:
 
-## Software Requirements
+- AWS EC2: Hosts the application on a cloud-based Ubuntu server.
+- Docker: Containerises the FastAPI application to provide a consistent deployment environment.
+- Docker Compose: Manages the application container.
+- Uvicorn: Runs the FastAPI application inside Docker.
+- Apache: Acts as a reverse proxy, forwarding incoming web requests to the FastAPI application.
+- SQLite: Stores plant information and historical sensor readings.
 
-- Python 3
-- Raspberry Pi OS
-- GPIO control library, such as `gpiozero`
-- SPI interface and an appropriate library for the MCP3008, if required
-
-## Project Structure
+### Project Structure
 
 A possible project structure is:
 
@@ -78,7 +73,7 @@ raspberry-pi-soil-monitor/
 
 The structure may change as the project develops.
 
-## Getting Started
+### Getting Started
 
 ### 1. Clone the repository
 

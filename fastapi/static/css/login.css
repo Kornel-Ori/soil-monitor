@@ -1,0 +1,93 @@
+
+body:has(.login-container) {
+    background: #f5f5f5;
+}
+
+body:has(.login-container) .main-content {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container {
+    width: 100%;
+    padding: 20px;
+}
+
+.login-box {
+    max-width: 380px;
+    margin: auto;
+    padding: 30px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.login-box p {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.login-box label {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 11px;
+    background: #198754;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #157347;
+}
+
+
+.guest-section {
+    text-align: center;
+    margin-top: 18px;
+}
+
+.guest-section span {
+    display: block;
+    color: #888;
+    margin-bottom: 12px;
+}
+
+.guest-button {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    color: #198754;
+    background: white;
+    border: 1px solid #198754;
+    border-radius: 5px;
+}
+
+.guest-button:hover {
+    background: #f0f8f3;
+}

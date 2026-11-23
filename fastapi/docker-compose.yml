@@ -1,0 +1,13 @@
+
+services:
+  api:
+    build: .
+    container_name: soil-monitor-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - soil-monitor-data:/app/database
+    restart: unless-stopped
+
+volumes:
+  soil-monitor-data:
