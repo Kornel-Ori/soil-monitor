@@ -37,7 +37,6 @@ class TokenResponse(BaseModel):
     token_type: str = "bearer"
 
 
-
 # -------- Plants
 class PlantBase(BaseModel):
     plant_name: str = Field(min_length=1, max_length=100)
