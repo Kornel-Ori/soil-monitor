@@ -3,11 +3,13 @@ name = "soil-moisture-monitor"
 version = "0.1.0"
 requires-python = ">=3.9"
 dependencies = [
+    "adafruit-circuitpython-ads1x15>=3.0.5",
     "email-validator>=2.3.0",
     "fastapi[standard]>=0.128.8",
     "jinja2>=3.1.6",
     "paho-mqtt>=2.2.0",
     "pwdlib[argon2]>=0.2.1",
     "pydantic>=2.13.5",
+    "pyjwt>=2.15.1",
     "sqlalchemy>=2.0.55",
 ]
