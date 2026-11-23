@@ -9,25 +9,15 @@ CREATE TABLE IF NOT EXISTS user (
     role VARCHAR(20) NOT NULL DEFAULT 'user'
 );
 
-CREATE TABLE IF NOT EXISTS plant_species (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    common_name VARCHAR(100) NOT NULL,
-    botanical_name VARCHAR(100),
-    description TEXT,
-    min_moisture FLOAT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-);
-
 CREATE TABLE IF NOT EXISTS plant (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NOT NULL,
-    species_id INT NOT NULL,
     plant_name VARCHAR(100) NOT NULL,
     location VARCHAR(100),
     min_moisture FLOAT,
+    max_moisture FLOAT,
     image_url VARCHAR(255),
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (species_id) REFERENCES plant_species(id),
     FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
