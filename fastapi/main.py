@@ -86,3 +86,11 @@ def login(
     )
 
     return response
+
+
+@app.get("/about", include_in_schema=False)
+def about(request: Request):
+    return templates.TemplateResponse(
+        request,
+        "about.html"
+    )
