@@ -20,6 +20,13 @@ htmlcov/
 .idea/
 .vscode/
 .DS_Store
+<<<<<<< Updated upstream
 
 # SQLite databases
 *.db
+=======
+**/.DS_Store
+
+# SQLite databases
+*.db
+>>>>>>> Stashed changes
