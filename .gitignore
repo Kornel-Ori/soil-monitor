@@ -23,3 +23,6 @@ htmlcov/
 
 .DS_Store
 **/.DS_Store
+
+# SQLite databases
+*.db
