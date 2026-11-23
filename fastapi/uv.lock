@@ -2493,11 +2493,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 name = "pyjwt"
 version = "2.15.1"
 source = { registry = "https://pypi.org/simple" }
@@ -2510,8 +2505,6 @@ wheels = [
 ]
 
 [[package]]
-<<<<<<< Updated upstream
-=======
 name = "pyserial"
 version = "3.5"
 source = { registry = "https://pypi.org/simple" }
@@ -2521,8 +2514,6 @@ wheels = [
 ]
 
 [[package]]
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 name = "python-dotenv"
 version = "1.2.1"
 source = { registry = "https://pypi.org/simple" }
