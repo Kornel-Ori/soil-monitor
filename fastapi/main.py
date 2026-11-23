@@ -1,16 +1,10 @@
 # uv run uvicorn main:app --reload
-<<<<<<< Updated upstream
-
-from fastapi import FastAPI, Request, Form, Depends
-=======
-<<<<<<< Updated upstream
-from fastapi import FastAPI, Depends, HTTPException, status, Request
-=======
 # ads1115 library: uv add adafruit-circuitpython-ads1x15
 
 from fastapi import FastAPI, Request, Form, Depends
->>>>>>> Stashed changes
->>>>>>> Stashed changes
+from fastapi import FastAPI, Depends, HTTPException, status, Request
+
+
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import RedirectResponse
