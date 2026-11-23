@@ -9,5 +9,6 @@ dependencies = [
     "paho-mqtt>=2.2.0",
     "pwdlib[argon2]>=0.2.1",
     "pydantic>=2.13.5",
+    "pyjwt>=2.15.1",
     "sqlalchemy>=2.0.55",
 ]
